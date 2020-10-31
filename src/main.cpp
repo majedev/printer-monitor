@@ -27,7 +27,7 @@ SOFTWARE.
  /**********************************************
  * Edit Settings.h for personalization
  ***********************************************/
-
+#include <Arduino.h>
 #include "Settings.h"
 
 #define VERSION "3.0"
@@ -63,6 +63,43 @@ void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state);
 void drawClock(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
 void drawWeather(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
 void drawClockHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state);
+void findMDNS();
+void getUpdateTime();
+boolean authentication();
+void handleSystemReset();
+void handleUpdateWeather();
+void handleUpdateConfig();
+void handleWifiReset();
+void handleWeatherConfigure();
+void handleConfigure();
+void displayMessage(String message);
+void redirectHome();
+String getHeader();
+String getHeader(boolean refresh);
+String getFooter();
+void displayPrinterStatus();
+void configModeCallback (WiFiManager *myWiFiManager);
+void ledOnOff(boolean value);
+void flashLED(int number, int delayTime);
+void drawScreen1(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawScreen2(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawScreen3(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawClock(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+void drawWeather(OLEDDisplay *display, OLEDDisplayUiState* state, int16_t x, int16_t y);
+String getTempSymbol();
+String getTempSymbol(boolean forHTML);
+String getSpeedSymbol();
+String zeroPad(int value);
+void drawHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state);
+void drawClockHeaderOverlay(OLEDDisplay *display, OLEDDisplayUiState* state);
+void drawRssi(OLEDDisplay *display);
+int8_t getWifiQuality();
+void writeSettings();
+void readSettings();
+int getMinutesFromLastRefresh();
+int getMinutesFromLastDisplay();
+void checkDisplay();
+void enableDisplay(boolean enable);
 
 // Set the number of Frames supported
 const int numberOfFrames = 3;
